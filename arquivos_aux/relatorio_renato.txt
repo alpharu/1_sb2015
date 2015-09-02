@@ -1,0 +1,62 @@
+1 - Comentários (valor: 2.0)
+      arquivos:
+              bin:     ok, montou e rodou corretamente no simulador
+              zerinho: ok, montou e rodou corretamente no simulador
+
+    total: 2.0
+
+2 - Ligação (valor: 2.0)
+      arquivos:
+           fat_mod_A: ok, montagem perfeita    
+           fat_mod_B: ok, montagem perfeita    
+      No entanto, na ligação faltou apenas resolver a referência cruzada a MOD_B
+      e aplicar o fator de correção para esse endereço, apesar de isso ter sido muito bem feito no caso do AUX. Assim, o único endereço que está com o valor errado é o endereço 10, que deveria ser 15 e não -1.
+      -> resultado:
+      12 13 10 13 2 14 8 10 5 -1 13 13 14 00 1 11 25 3 13 11 13 10 25 5 4 00 
+      -> gabarito
+      12 13 10 13 2 14 8 10 5 15 13 13 14 00 1 11 25 3 13 11 13 10 25 5 4 00 
+       
+      (-0.5)
+           --------------  
+     
+
+      prog1_mod_A e prog1_mod_B: ótimo, tudo está correto: montagem e ligação, além de funcionar perfeitamente no simulador.
+
+    total: 1.5
+
+3 - Detecção de Erros (valor: 6.0 -> 0.2 cada)
+    erro-begin-SINTATICO: indica um erro semântico de rótulo indefinido. Porém não verifica a construção sintática de BEGIN (-0.15)
+    erro-decl-ausente-SEMANTICO  (2 linhas de erro): OK
+    erro-decl-repetida-SEMANTICO:                    OK
+    erro-desvio1-SEMANTICO:     não indica erro (-0.2)
+    erro-desvio2-SEMANTICO:     não indica erro (-0.2)
+    erro-diretiva1-SINTATICO:   não indica erro (-0.2) 
+    erro-diretiva2-SEMANTICO:   OK
+    erro-diretiva3-SINTATICO:   não indica erro (-0.2)
+    erro-divisao-SINTATICO:     OK
+    erro-end-ausente-SEMANTICO: não indica erro (-0.2)
+    erro-gramatica-SEMANTICO:   OK
+    erro-instrucao-SINTATICO (ou Lexico): Indica o erro duas vezes, mas OK. 
+    erro-LEXICO1: não indica erro (-0.2)
+    erro-LEXICO2: pode ser interpretado como erro sintático, mas, nesse caso, também deveria indicar erro léxico (-0.1) na mesma linha.
+    erro-LEXICO3: pode ser interpretado como erro semântico, mas, nesse caso, também deveria indicar erro léxico (-0.1) na linha 8.
+    erro-numero-SINTATICO:     não indica erro (-0.2)
+    erro-numero-SINTATICO2:    não indica erro (-0.2)
+    erro-operandos1-SINTATICO: OK
+    erro-operandos2-SINTATICO: OK
+    erro-output-SINTATICO: indica erro semântico e não sintático como deveria, pois a construção da intrução output está errada (-0.1)
+    erro-rotulo-ausente-SEMANTICO:  OK
+    erro-rotulo-dobrado-SINTATICO:  OK
+    erro-rotulo-repetido-SEMANTICO: OK
+    erro-secao1-SEMANTICO (ou Sintatico):  OK
+    erro-secao2-SINTATICO:  OK
+    erro-tipo1-SEMANTICO:   não indica erro (-0.2)
+    erro-tipo2-SEMANTICO:   não indica erro (-0.2)
+    erro-vetor1-SEMANTICO:  OK
+    erro-vetor2-SEMANTICO:  OK
+    erro-vetor3-SINTATICO:  não indica erro (-0.2)
+
+TOTAL: 3.35
+
+
+FINAL: 6.85
